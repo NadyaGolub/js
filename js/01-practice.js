@@ -210,23 +210,23 @@
 //     .map(user => user.name);
 // console.table([...users]);
 
-const listWithId = document.querySelector('#menu');
-listWithId.style.textTransform = 'uppercase';
-listWithId.style.fontSize = '24px';
-console.log(listWithId);
+// const listWithId = document.querySelector('#menu');
+// listWithId.style.textTransform = 'uppercase';
+// listWithId.style.fontSize = '24px';
+// console.log(listWithId);
 
-const listWithClass = document.querySelector('.menu');
-console.log(listWithClass);
+// const listWithClass = document.querySelector('.menu');
+// console.log(listWithClass);
 
-const menuItemsByTagName = document.querySelectorAll("li");
-console.log(menuItemsByTagName);
+// const menuItemsByTagName = document.querySelectorAll("li");
+// console.log(menuItemsByTagName);
 
-const menuItemsByClass = document.querySelectorAll(".menu-item");
-console.log(menuItemsByClass);
+// const menuItemsByClass = document.querySelectorAll(".menu-item");
+// console.log(menuItemsByClass);
 
-const firstMenuItem = document.querySelector(".menu-item");
-firstMenuItem.style.color = 'tomato';
-console.log(firstMenuItem);
+// const firstMenuItem = document.querySelector(".menu-item");
+// firstMenuItem.style.color = 'tomato';
+// console.log(firstMenuItem);
 
 
 
@@ -256,3 +256,21 @@ console.log(firstMenuItem);
 
 // list.append(liPotatoes, liMushrooms, liGarlic, liTomatos, liHerbs, liCondiments);
 // console.log(list);
+
+const form = document.querySelector(".form");
+
+form.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const {
+    elements: { login, password }
+  } = event.currentTarget;
+
+  if (login.value === "" || password.value === "") {
+    return console.log("Please fill in all the fields!");
+  }
+
+  console.log(`Login: ${login.value}, Password: ${password.value}`);
+  event.currentTarget.reset();
+}
